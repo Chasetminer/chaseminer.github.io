@@ -1,0 +1,32 @@
+name: Deploy GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: "Which site to deploy?"
+        required: true
+        default: "minimal_mistakes_jekyll"
+        type: choice
+        options:
+          - minimal_mistakes_jekyll
+          - website_from_scratch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.event.inputs.site }}
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
