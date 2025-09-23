@@ -1,0 +1,111 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+}
+
+header {
+  font-family: serif;
+  background: #374151;
+  color: white;
+  padding: 1rem;
+}
+
+nav a {
+  margin-right: 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  padding: 1rem;
+}
+
+aside {
+  width: 25%;
+  background: #7057c3;
+  padding: 1rem;
+}
+
+section {
+  width: 75%;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+/* Hero section styling */
+.hero img {
+  width: 100%;           /* Takes full width of container */
+  height: 200px;         /* Fixed height - adjust as needed */
+  object-fit: cover;     /* Crops image to maintain aspect ratio */
+  display: block;
+}
+
+/* Posts index page styling */
+.posts-index {
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.posts-list h1 {
+  color: #374151;
+  border-bottom: 2px solid #7057c3;
+  padding-bottom: 0.5rem;
+}
+
+.post-preview {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease;
+}
+
+.post-preview:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post-preview h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.post-preview h2 a {
+  color: #374151;
+  text-decoration: none;
+}
+
+.post-preview h2 a:hover {
+  color: #7057c3;
+}
+
+.post-date {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.post-excerpt {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: #7057c3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #374151;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}

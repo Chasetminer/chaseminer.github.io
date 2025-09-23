@@ -1,0 +1,142 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+/* Custom variables to override theme defaults */
+$serif: Georgia, Times, serif;
+$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+  "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$monospace: Monaco, Consolas, "Lucida Console", monospace;
+
+/* Colors */
+$background-color: #23272F !default;
+$text-color: #ffffff !default;
+$primary-color: #6f777d !default;
+$link-color: #2980b9 !default;
+$link-color-hover: mix(#000, $link-color, 25%) !default;
+
+/* Font sizes */
+$type-size-1: 2.441em !default; // ~39.056px
+$type-size-2: 1.953em !default; // ~31.248px
+$type-size-3: 1.563em !default; // ~25.008px
+$type-size-4: 1.25em !default; // ~20px
+$type-size-5: 1em !default; // ~16px
+$type-size-6: 0.75em !default; // ~12px
+$type-size-7: 0.6875em !default; // ~11px
+$type-size-8: 0.625em !default; // ~10px
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* Custom CSS rules */
+.page__content {
+  p,
+  li {
+    font-size: 1em;
+    line-height: 1.8;
+  }
+}
+
+.page__title {
+  font-family: $monospace;
+  color: $primary-color;
+}
+
+/* Example of custom link styling */
+.page__content {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Custom grid layout for posts */
+.grid__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2em;
+  margin-bottom: 2em;
+}
+
+.grid__item {
+  margin-bottom: 0;
+
+  .archive__item-teaser {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 56.25%; // 16:9 aspect ratio
+    margin-bottom: 1em;
+    border-radius: 8px;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .archive__item-title {
+    margin-top: 0.5em;
+    font-size: $type-size-5;
+  }
+
+  .archive__item-excerpt {
+    font-size: $type-size-6;
+  }
+}
+
+@media (min-width: 64em) {
+  .grid__wrapper {
+    grid-template-columns: repeat(3, 1fr); // Force 3 columns on larger screens
+  }
+}
+
+/* Related posts layout adjustments */
+.page__related {
+  margin-top: 3em; /* more breathing room above section */
+
+  .grid__wrapper {
+    grid-gap: 2.5em; /* more space between items */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(340px, 1fr)
+    ); /* larger cards */
+  }
+
+  .grid__item {
+    margin-bottom: 0; /* ensure no extra bottom gap from theme */
+  }
+
+  .archive__item-teaser {
+    margin-bottom: 0.75em;
+    padding-bottom: 62.5%; /* slightly taller image (approx 16:10) */
+    border-radius: 6px;
+  }
+
+  .archive__item-title {
+    font-size: $type-size-5; /* bump title size a touch */
+    line-height: 1.3;
+    margin: 0.25em 0 0.5em;
+  }
+
+  .archive__item-excerpt {
+    font-size: $type-size-6;
+    line-height: 1.6;
+  }
+}
+
+@media (min-width: 64em) {
+  .page__related .grid__wrapper {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* ensure 3 columns on large screens */
+  }
+}
