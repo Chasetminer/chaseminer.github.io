@@ -1,11 +1,20 @@
+import { Link } from 'react-router-dom';
+import posts from '../data/posts';
+
 export default function Sidebar() {
   return (
     <aside className="sidebar">
-      <h3>Other Posts</h3>
-      <ul>
-        <li>Post A</li>
-        <li>Post B</li>
-      </ul>
+      <section className="post-list">
+        <h2>All Posts</h2>
+        <ul>
+          {posts.map(post => (
+            <li key={post.id}>
+              <Link to={`/post/${post.id}`}>{post.title}</Link>
+              <p><em>{post.date}</em></p>
+            </li>
+          ))}
+        </ul>
+      </section>
     </aside>
   );
 }

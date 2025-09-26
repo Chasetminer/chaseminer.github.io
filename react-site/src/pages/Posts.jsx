@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar';
 export default function Posts() {
   return (
     <div className="posts-layout">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <section className="post-list">
         <h2>All Posts</h2>
         <ul>
