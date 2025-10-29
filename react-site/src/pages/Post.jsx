@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import posts from '../data/posts';
 import Sidebar from '../components/Sidebar';
 import { parseContent, renderBlocks } from '../utils/parseContent.jsx';
+import { getAssetPath } from '../utils/assetPath.js';
 
 export default function Post() {
   const { id } = useParams();
@@ -17,8 +18,8 @@ export default function Post() {
     if (!photoString) return null;
     const sources = photoString.split('|').map(s => s.trim());
     return {
-      desktop: sources[0],
-      mobile: sources[1] || sources[0] // fallback to desktop if no mobile specified
+      desktop: getAssetPath(sources[0]),
+      mobile: getAssetPath(sources[1] || sources[0]) // fallback to desktop if no mobile specified
     };
   };
 

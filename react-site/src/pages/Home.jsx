@@ -1,6 +1,7 @@
 import posts from '../data/posts';
 import homePost from '../data/homePost';
 import { parseContent, renderBlocks } from '../utils/parseContent.jsx';
+import { getAssetPath } from '../utils/assetPath.js';
 
 export default function Home() {
   // homePost now comes from its own module and is excluded from posts listing
@@ -13,13 +14,14 @@ export default function Home() {
     if (!photoString) return null;
     const sources = photoString.split('|').map(s => s.trim());
     // For tiles, prefer mobile version (better proportions) with desktop fallback
-    return sources[1] || sources[0];
+    const selectedImage = sources[1] || sources[0];
+    return getAssetPath(selectedImage);
   };
 
   return (
     <div className="home">
       <div className="home-top">
-        <img src="/hero2.jpg" alt="Hero" className="hero-image" />
+        <img src={getAssetPath("/hero2.jpg")} alt="Hero" className="hero-image" />
         <section className="intro">
           <div className='post-inner'>
             <h1>{homePost.title}</h1>

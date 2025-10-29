@@ -6,6 +6,8 @@
 //  - Inline backticks are left untouched (no markdown inline parsing yet)
 //  - Returns plain objects describing blocks; renderer converts them to JSX
 
+import { getAssetPath } from './assetPath.js';
+
 export function parseContent(raw) {
   if (!raw || !raw.trim()) return [];
   const blocks = raw
@@ -29,8 +31,8 @@ export function parseContent(raw) {
       
       // Handle responsive images: desktop.jpg|mobile.jpg
       const sources = srcString.split('|').map(s => s.trim());
-      const desktopSrc = sources[0];
-      const mobileSrc = sources[1] || desktopSrc; // fallback to desktop if no mobile specified
+      const desktopSrc = getAssetPath(sources[0]);
+      const mobileSrc = sources[1] ? getAssetPath(sources[1]) : desktopSrc; // fallback to desktop if no mobile specified
       
       return {
         type: 'image',
