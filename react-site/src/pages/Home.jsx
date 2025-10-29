@@ -33,7 +33,7 @@ export default function Home() {
       <section className="home-tiles" aria-labelledby="home-tiles-heading">
         <h2 id="home-tiles-heading" className="home-tiles__title">Explore More</h2>
         <div className="tiles-grid">
-          {['getting-started','SAINTCON','jekyll-build-errors', 'test1', 'test2', 'test3']
+          {['getting-started','SAINTCON','pihole', 'plant_monitoring', 'test2', 'test3']
             .map(id => posts.find(p => p.id === id))
             .filter(Boolean)
             .map(post => {

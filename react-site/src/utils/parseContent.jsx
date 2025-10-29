@@ -20,7 +20,12 @@ export function parseContent(raw) {
     // Check for image syntax: ![position:caption](url) or ![position:caption](desktop-url|mobile-url)
     const imageMatch = block.match(/^!\[([^:]+):([^\]]*)\]\(([^)]+)\)$/);
     if (imageMatch) {
-      const [, position, caption, srcString] = imageMatch;
+      const [, positionString, caption, srcString] = imageMatch;
+      
+      // Parse position and optional size modifier: "center-large", "left-small", etc.
+      const positionParts = positionString.trim().toLowerCase().split('-');
+      const position = positionParts[0]; // 'left', 'right', 'full', 'center'
+      const size = positionParts[1] || 'default'; // 'small', 'large', or 'default'
       
       // Handle responsive images: desktop.jpg|mobile.jpg
       const sources = srcString.split('|').map(s => s.trim());
@@ -33,7 +38,8 @@ export function parseContent(raw) {
         src: desktopSrc,
         mobileSrc: mobileSrc,
         caption: caption.trim(),
-        position: position.trim().toLowerCase(), // 'left', 'right', 'full', 'center'
+        position: position,
+        size: size,
         alt: caption.trim() || 'Image'
       };
     }
@@ -66,8 +72,9 @@ export function renderBlocks(blocks) {
       // Use HTML picture element for responsive images if mobile source differs
       const hasResponsiveSources = b.mobileSrc && b.mobileSrc !== b.src;
       
+      const sizeClass = b.size !== 'default' ? ` post-image--${b.size}` : '';
       return (
-        <figure key={b.key} className={`post-image post-image--${b.position}`}>
+        <figure key={b.key} className={`post-image post-image--${b.position}${sizeClass}`}>
           {hasResponsiveSources ? (
             <picture>
               <source media="(max-width: 768px)" srcSet={b.mobileSrc} />

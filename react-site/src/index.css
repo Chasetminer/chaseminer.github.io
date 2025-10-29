@@ -237,7 +237,7 @@ nav a {
 
 .post-image--center {
   margin: 2rem auto;
-  max-width: 60%;
+  max-width: 85%;
   text-align: center;
 }
 
@@ -255,6 +255,24 @@ nav a {
   clear: both;
 }
 
+/* Image size variants */
+.post-image--small {
+  max-width: 40% !important;
+}
+
+.post-image--large {
+  max-width: 95% !important;
+}
+
+/* Center-specific size overrides */
+.post-image--center.post-image--small {
+  max-width: 45% !important;
+}
+
+.post-image--center.post-image--large {
+  max-width: 95% !important;
+}
+
 /* Mobile: stack all images, no floating */
 @media (max-width: 768px) {
   .post-image--left,
@@ -267,6 +285,15 @@ nav a {
   
   .post-image--center {
     max-width: 90%;
+  }
+  
+  /* Size variants on mobile */
+  .post-image--small {
+    max-width: 70% !important;
+  }
+  
+  .post-image--large {
+    max-width: 95% !important;
   }
 }
 
@@ -404,6 +431,109 @@ article.post { display: block; }
   .home-tiles { padding-left: 2rem; padding-right:2rem; }
   .tile__title { font-size:1.1rem; }
   .tile__excerpt { font-size:.82rem; }
+}
+
+/* CV Page Styles */
+.cv {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.cv h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cv-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cv-download-btn,
+.cv-view-btn {
+  padding: 0.75rem 1.5rem;
+  background: #646cff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cv-download-btn:hover,
+.cv-view-btn:hover {
+  background: #535bf2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+}
+
+.cv-embed {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafafa;
+  min-height: 800px;
+}
+
+.cv-embed embed {
+  display: block;
+  border: none;
+}
+
+.cv-fallback {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.cv-fallback a {
+  color: #646cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cv-fallback a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness for CV */
+@media (max-width: 768px) {
+  .cv {
+    padding: 1rem 0.5rem;
+  }
+  
+  .cv-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cv-download-btn,
+  .cv-view-btn {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .cv-embed {
+    min-height: 600px;
+  }
+  
+  .cv-embed embed {
+    height: 600px;
+  }
 }
 
 
