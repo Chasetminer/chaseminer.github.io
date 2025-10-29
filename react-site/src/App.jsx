@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Posts from './pages/Posts';
 import CV from './pages/CV';
@@ -10,6 +11,7 @@ import Post from './pages/Post';
 function App() {
   return (
     <Router basename="/">
+      <ScrollToTop />
       <Header />
       <main className="main-content">
         <Routes>
