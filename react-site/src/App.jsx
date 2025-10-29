@@ -9,7 +9,7 @@ import Post from './pages/Post';
 
 function App() {
   return (
-    <Router basename="/react-site">
+    <Router basename="/">
       <Header />
       <main className="main-content">
         <Routes>
