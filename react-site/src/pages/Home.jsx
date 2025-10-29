@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import posts from '../data/posts';
 import homePost from '../data/homePost';
 import { parseContent, renderBlocks } from '../utils/parseContent.jsx';
@@ -47,7 +48,7 @@ export default function Home() {
               const excerpt = firstParagraph.replace(/\s+/g,' ').slice(0,160).trim() + (firstParagraph.length > 160 ? '…' : '');
               return (
                 <article key={post.id} className="tile">
-                  <a href={`/post/${post.id}`} className="tile__link" aria-label={post.title}>
+                  <Link to={`/post/${post.id}`} className="tile__link" aria-label={post.title}>
                     <div className="tile__media">
                       {getTileImageSrc(post.photo) ? (
                         <img src={getTileImageSrc(post.photo)} alt={post.title} loading="lazy" />
@@ -59,7 +60,7 @@ export default function Home() {
                       <h3 className="tile__title">{post.title}</h3>
                       <p className="tile__excerpt">{excerpt}</p>
                     </div>
-                  </a>
+                  </Link>
                 </article>
               );
             })}
