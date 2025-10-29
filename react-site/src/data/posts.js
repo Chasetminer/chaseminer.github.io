@@ -5,7 +5,7 @@ const posts = [
     date: '2025-09-01',
     photo: '/MontBlancBanner.jpg', // place this file in public/MontBlancBanner.jpg
     content: `
-      Welcome to my website! This is a project I’ve been working on for the past couple months. I started out on Codecademy learning the basics of HTML and CSS. The website is built using JavaScript with the React framework. It’s still a work in progress, so there may still be some lorem ipsum text scattered throughout as I work to update the website with projects I’ve been working on, photos from my different hobbies, and just other tech related topics I’m exploring.
+      Welcome to my website! This is a project I’ve been working on for the past couple months. I started out on Codecademy learning the basics of HTML and CSS. The website is built using JavaScript with the React framework. Much of the website was built using Claude Sonnet 4 as a starting point, and then I'd make changes as needed. It’s still a work in progress, so there may still be some lorem ipsum text scattered throughout as I work to update the website with projects I’ve been working on, photos from my different hobbies, and just other tech related topics I’m exploring.
 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis tortor et nisl ullamcorper, eu rhoncus orci hendrerit. 
       Integer cursus est turpis, eu lobortis risus maximus quis. Vestibulum porttitor mattis nisi vel molestie. Fusce sed semper augue. 
