@@ -108,37 +108,35 @@ Sometimes I need to turn off the Pi-hole for a time, such as when I’m clicking
     content: `
 My longest running project is a remote plant monitoring system. The project started my freshman year with a dream of having a bonsai tree that I could keep on my desk. Bonsai trees are difficult to take care of though. So I decided that I’d make as curated of an experience for the tree as possible. That included a custom built wooden stand with arches with embedded grow LEDs going over the tree. It would include a soil moisture monitoring system and a pump/reservoir to add water as needed to the shallow roots of the small tree. 
 
+![left:This is the ESP32 and the capacitive moisture sensor wired up](/ESP32_and_sensor.jpeg)
+
 I decided that my first step in this project would be to find a way to remotely monitor the soil moisture of my plants. I had 3 small succulents that sat on my desk in the dorms. Because they were so drought resistant, I never knew when to water them. And I often forgot when the last time I watered the plants. So rather than do something like keep a log of every time I watered the plants, I decided to take the over-engineered route. I got an Arduino nano and a few I2C capacitive moisture sensors, designed for this very task. I thought it would be a fun project for me to embark.
 
 The challenge came after I received the parts. I didn’t know where to start! I tried googling what my challenge was to see if anyone had posted about their process before. I found similar projects, but nothing that was exactly like what I was trying to do. Part of the problem was that I wasn’t entirely sure what I wanted the system to look like when it was finished! After struggling to get the system to work for a week or so, and with my first round of midterms coming up, I decided to put the project on hold.
 
 Two years later, I was in an embedded systems class. I learned about what I2C was, the basics of embedded programming, and even used an Arduino Nano for the class. I remembered that I had my capacitive moisture sensors and an Arduino at home. I picked the project back up and made my first working prototype! It would print a calibrated soil moisture reading to my terminal while I ran the program, with the Arduino plugged into my laptop. I had gotten it working well enough.
 
+![center-large:This is what my Grafana dashboard looks like. I have a different graph for each plant. Notice that the y-axis is how dry the soil is. I might change that to be more clear. You can also see that the moisture measurements vary cyclically throughout the day.](/Grafana_dashboard.png)
+
 Then a year after that, I had taken more classes and more importantly had been exposed to more microcontrollers. I was at the point where I knew enough to know what to look up. I decided to make another iteration of my sensor project and bought some knock-off ESP32s for the project. I followed another tutorial and setup my current system: a database on my RaspberryPi, Mosquitto on my ESP32s configured as publishers, a broker and subscriber on my RaspberryPi that feeds into my database, and then a Grafana dashboard where I can view the regularly published moisture levels. And because my RaspberryPi is on my Tailscale network, I can view my plant dashboard from anywhere! 
     `,
   },
   {
-    id: 'test2',
-    title: 'DNS Troubleshooting Tips',
+    id: 'origami',
+    title: 'Origami Endeavors',
     date: '2025-09-20',
-    photo: '/dns.png',
+    photo: '/Origami_dragon.jpeg|/Origami_horse.jpeg',
     content: `
-      DNS issues can be frustrating, especially when deploying custom domains. Here's how I debugged my GitHub Pages setup:
-      - Verified CNAME records
-      - Cleared browser cache
-      - Used incognito mode to bypass cached redirects
+      Lorem ipsum
     `,
   },
   {
-    id: 'test3',
-    title: 'DNS Troubleshooting Tips',
+    id: 'Floral_Design',
+    title: 'Floral Design',
     date: '2025-09-20',
-    photo: '/dns.png',
+    photo: '/Flower_landscape.jpeg|/Flower_hero.jpeg',
     content: `
-      DNS issues can be frustrating, especially when deploying custom domains. Here's how I debugged my GitHub Pages setup:
-      - Verified CNAME records
-      - Cleared browser cache
-      - Used incognito mode to bypass cached redirects
+      Lorem Ipsum
     `,
   },
   {
