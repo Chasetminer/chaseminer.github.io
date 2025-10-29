@@ -9,17 +9,14 @@ import Post from './pages/Post';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/react-site">
       <Header />
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/posts" element={<Posts />} />
           <Route path="/cv" element={<CV />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/posts" element={<Posts />} />
           <Route path="/post/:id" element={<Post />} />
-          <Route path="/cv" element={<CV />} />
         </Routes>
       </main>
       <Footer />
