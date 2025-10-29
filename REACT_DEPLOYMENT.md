@@ -30,7 +30,7 @@ Make sure GitHub Pages is configured in your repository:
 1. Go to your repository settings
 2. Navigate to "Pages" section
 3. Set source to "GitHub Actions"
-4. The site will be available at: `https://yourusername.github.io/react-site/`
+4. The site will be available at: `https://yourusername.github.io/`
 
 ## Local Development
 
@@ -53,8 +53,16 @@ npm run dev
 1. Save your CV as `cv.pdf` in `/react-site/public/`
 2. The CV page will automatically display it with download/view options
 
+## SPA Routing Fix
+
+The site uses a special routing fix for GitHub Pages:
+- `404.html` captures failed routes and stores the path
+- `index.html` restores the correct path when the app loads
+- This allows direct navigation to `/posts`, `/cv`, etc. to work correctly
+
 ## Troubleshooting
 
-- **404 errors on refresh**: The `404.html` file handles client-side routing
-- **Assets not loading**: Check the `base` path in `vite.config.js`
+- **404 errors on refresh**: The `404.html` file handles client-side routing automatically
+- **White screen on navigation**: Make sure both `404.html` and the redirect script in `index.html` are present
+- **Assets not loading**: Check the `base` path in `vite.config.js` (should be `/` for root deployment)
 - **Build fails**: Check the GitHub Actions logs in the repository

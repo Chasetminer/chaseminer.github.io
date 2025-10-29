@@ -7,20 +7,15 @@
     <title>Chase Miner's Website</title>
     
     <!-- GitHub Pages SPA redirect script -->
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // Start single page app as normal below for development
-      // https://github.com/rafgraph/spa-github-pages
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
+    <script>
+      // Check if we were redirected from 404.html
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.pathname) {
+          history.replaceState(null, null, redirect);
         }
-      }(window.location))
+      })();
     </script>
   </head>
   <body>
