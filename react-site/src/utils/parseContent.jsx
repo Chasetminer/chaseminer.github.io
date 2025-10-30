@@ -8,6 +8,44 @@
 
 import { getAssetPath } from './assetPath.js';
 
+// Process inline markdown like **bold**, *italic*, and HTML tags like <br>
+function processInlineMarkdown(text) {
+  const parts = [];
+  let currentIndex = 0;
+  
+  // Regular expression to match **bold**, *italic*, and <br> tags
+  const markdownRegex = /(\*\*([^*]+)\*\*|\*([^*]+)\*|<br\s*\/?>)/gi;
+  let match;
+  
+  while ((match = markdownRegex.exec(text)) !== null) {
+    // Add text before the match
+    if (match.index > currentIndex) {
+      parts.push(text.slice(currentIndex, match.index));
+    }
+    
+    // Add the formatted text or HTML element
+    if (match[2]) {
+      // **bold** text
+      parts.push(<strong key={`bold-${match.index}`}>{match[2]}</strong>);
+    } else if (match[3]) {
+      // *italic* text
+      parts.push(<em key={`italic-${match.index}`}>{match[3]}</em>);
+    } else if (match[0].toLowerCase().startsWith('<br')) {
+      // <br> or <br/> tag
+      parts.push(<br key={`br-${match.index}`} />);
+    }
+    
+    currentIndex = match.index + match[0].length;
+  }
+  
+  // Add remaining text
+  if (currentIndex < text.length) {
+    parts.push(text.slice(currentIndex));
+  }
+  
+  return parts.length > 0 ? parts : text;
+}
+
 export function parseContent(raw) {
   if (!raw || !raw.trim()) return [];
   const blocks = raw
@@ -18,6 +56,19 @@ export function parseContent(raw) {
 
   return blocks.map((block, i) => {
     const lines = block.split(/\n+/).map(l => l.trim()).filter(Boolean);
+    
+    // Check for headers: ## Header, ### Subheader, etc.
+    const headerMatch = block.match(/^(#{1,6})\s+(.+)$/);
+    if (headerMatch) {
+      const [, hashes, text] = headerMatch;
+      const level = hashes.length;
+      return {
+        type: 'header',
+        key: i,
+        level: level,
+        text: text.trim()
+      };
+    }
     
     // Check for image syntax: ![position:caption](url) or ![position:caption](desktop-url|mobile-url)
     const imageMatch = block.match(/^!\[([^:]+):([^\]]*)\]\(([^)]+)\)$/);
@@ -46,7 +97,7 @@ export function parseContent(raw) {
       };
     }
     
-    const isList = lines.length > 1 && lines.every(l => l.startsWith('- '));
+    const isList = lines.every(l => l.startsWith('- '));
     if (isList) {
       return {
         type: 'list',
@@ -60,6 +111,15 @@ export function parseContent(raw) {
 
 export function renderBlocks(blocks) {
   return blocks.map(b => {
+    if (b.type === 'header') {
+      const HeaderTag = `h${b.level}`;
+      return (
+        <HeaderTag key={b.key} className={`post-header post-header--${b.level}`}>
+          {b.text}
+        </HeaderTag>
+      );
+    }
+    
     if (b.type === 'list') {
       return (
         <ul key={b.key} className="post-list-block">
@@ -102,6 +162,8 @@ export function renderBlocks(blocks) {
       );
     }
     
-    return <p key={b.key}>{b.text}</p>;
+    // Process inline markdown in paragraphs
+    const processedText = processInlineMarkdown(b.text);
+    return <p key={b.key}>{processedText}</p>;
   });
 }

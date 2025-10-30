@@ -104,7 +104,7 @@ Sometimes I need to turn off the Pi-hole for a time, such as when I’m clicking
     id: 'plant_monitoring',
     title: 'Plant Monitoring Project',
     date: '2022-10-01',
-    photo: '/Forest.jpeg|/Bonsai_mobile.jpg',
+    photo: '/Bonsai_hero.jpeg|/Bonsai_mobile.jpg',
     content: `
 My longest running project is a remote plant monitoring system. The project started my freshman year with a dream of having a bonsai tree that I could keep on my desk. Bonsai trees are difficult to take care of though. So I decided that I’d make as curated of an experience for the tree as possible. That included a custom built wooden stand with arches with embedded grow LEDs going over the tree. It would include a soil moisture monitoring system and a pump/reservoir to add water as needed to the shallow roots of the small tree. 
 
@@ -125,7 +125,7 @@ Then a year after that, I had taken more classes and more importantly had been e
     id: 'origami',
     title: 'Origami Endeavors',
     date: '2025-09-20',
-    photo: '/Origami_dragon.jpeg|/Origami_horse.jpeg',
+    photo: '/Origami_dragon.jpeg|/Origami_dragon_hero.jpeg',
     content: `
       Lorem ipsum
     `,
@@ -156,9 +156,29 @@ Then a year after that, I had taken more classes and more importantly had been e
 export default posts;
 
 
+// MARKDOWN SYNTAX REFERENCE:
+// 
+// Headers:
+// # Main Header (h1)
+// ## Section Header (h2) 
+// ### Subsection Header (h3)
+// #### Small Header (h4)
+// ##### Tiny Header (h5)
+// ###### Smallest Header (h6)
+//
+// Text Formatting:
+// **bold text** - Makes text bold
+// *italic text* - Makes text italic
+//
+// Lists:
+// - Item 1
+// - Item 2
+// - Item 3
+//
+// Images:
 // ![center:caption](image) - Regular center (85% width)
 // ![center-small:caption](image) - Small center (45% width)
 // ![center-large:caption](image) - Large center (95% width)
 // ![left-small:caption](image) - Small left-floating (40% width)
 // ![right-large:caption](image) - Large right-floating (95% width)
-// And any other position-size combination you need
+// ![position:caption](desktop.jpg|mobile.jpg) - Responsive images

@@ -9,7 +9,7 @@ body {
 }
 
 a { color: #222; text-decoration: none; }
-a:hover { color: #646cff; }
+a:hover { color: #577B9F; }
 
 h1 { line-height: 1.15; margin: 0 0 1rem; font-weight: 600; }
 
@@ -124,7 +124,7 @@ nav a {
   bottom: -2px;
   width: 0;
   height: 2px;
-  background: #646cff;
+  background: #577B9F;
   transition: width 160ms ease;
 }
 
@@ -192,10 +192,34 @@ nav a {
   line-height: 1.5;
 }
 
+/* Post headers */
+.post-header {
+  margin: 2rem 0 1rem 0;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.post-header--1 { font-size: 2.2rem; margin-top: 2.5rem; }
+.post-header--2 { font-size: 1.8rem; margin-top: 2rem; }
+.post-header--3 { font-size: 1.5rem; margin-top: 1.8rem; }
+.post-header--4 { font-size: 1.3rem; margin-top: 1.5rem; }
+.post-header--5 { font-size: 1.15rem; margin-top: 1.3rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.post-header--6 { font-size: 1rem; margin-top: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: #d1d5db; }
+
+/* First header has less top margin */
+.post-body > .post-header:first-child {
+  margin-top: 0;
+}
+
 @media (min-width: 800px) {
   .post-body p {
     font-size: 1.05rem; /*font size of the text*/
   }
+  
+  .post-header--1 { font-size: 2.5rem; }
+  .post-header--2 { font-size: 2rem; }
+  .post-header--3 { font-size: 1.7rem; }
 }
 
 /* Inline post images with text flow */
@@ -407,7 +431,7 @@ article.post { display: block; }
   border: 1px solid #23272F;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 1px 2px #646cff;
+  box-shadow: 0 1px 2px #577B9F;
   transition: box-shadow 140ms ease, transform 140ms ease;
   display: flex;
   flex-direction: column;
@@ -423,7 +447,7 @@ article.post { display: block; }
 .tile__title { margin: 0 0 .5rem 0; font-size: 1.05rem; line-height:1.25; font-weight:600; letter-spacing:-0.3px; }
 .tile__excerpt { margin:0; font-size:.8rem; line-height:1.35; color:#dedede; }
 
-.tile:hover, .tile:focus-within { box-shadow:0 3px 10px #646cff; transform:translateY(-3px); }
+.tile:hover, .tile:focus-within { box-shadow:0 3px 10px #577B9F; transform:translateY(-3px); }
 .tile:active { transform:translateY(-1px); }
 
 /* Improve large screen rhythm */
@@ -434,25 +458,15 @@ article.post { display: block; }
 }
 
 /* CV Page Styles */
-.cv {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.cv h1 {
-  text-align: center;
+.cv-actions-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(55, 65, 81, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #4b5563;
+  padding: 1rem;
   margin-bottom: 2rem;
-  color: #ffffff;
-}
-
-.cv-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.cv-actions {
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -462,7 +476,7 @@ article.post { display: block; }
 .cv-download-btn,
 .cv-view-btn {
   padding: 0.75rem 1.5rem;
-  background: #646cff;
+  background: #577B9F;
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -473,66 +487,24 @@ article.post { display: block; }
 
 .cv-download-btn:hover,
 .cv-view-btn:hover {
-  background: #535bf2;
+  background: #577B9F;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
 }
 
-.cv-embed {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fafafa;
-  min-height: 800px;
-}
-
-.cv-embed embed {
-  display: block;
-  border: none;
-}
-
-.cv-fallback {
-  text-align: center;
-  padding: 2rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-.cv-fallback a {
-  color: #646cff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.cv-fallback a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile responsiveness for CV */
+/* Mobile responsiveness for CV actions bar */
 @media (max-width: 768px) {
-  .cv {
-    padding: 1rem 0.5rem;
-  }
-  
-  .cv-actions {
+  .cv-actions-bar {
     flex-direction: column;
     align-items: center;
+    padding: 0.75rem;
   }
   
   .cv-download-btn,
   .cv-view-btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     text-align: center;
-  }
-  
-  .cv-embed {
-    min-height: 600px;
-  }
-  
-  .cv-embed embed {
-    height: 600px;
   }
 }
 

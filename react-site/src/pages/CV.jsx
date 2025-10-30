@@ -1,53 +1,43 @@
+import cvData from '../data/cvData';
+import Sidebar from '../components/Sidebar';
+import { parseContent, renderBlocks } from '../utils/parseContent.jsx';
 import { getAssetPath } from '../utils/assetPath.js';
 
 export default function CV() {
-  const cvPath = getAssetPath('/Chase_Miner_CV_DRAFT.pdf');
-  
+  const cvPath = getAssetPath(cvData.pdfPath);
+  const structured = parseContent(cvData.content);
+  const renderedBlocks = renderBlocks(structured);
+
   return (
-    <section className="cv">
-      <h1>My CV</h1>
-      <div className="cv-container">
-        <div className="cv-actions">
-          <a 
-            href={cvPath} 
-            download="Chase_Miner_CV.pdf"
-            className="cv-download-btn"
-          >
-            Download PDF
-          </a>
-          <a 
-            href={cvPath} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="cv-view-btn"
-          >
-            Open in New Tab
-          </a>
-        </div>
-        
-        <div className="cv-embed">
-          <embed 
-            src={cvPath} 
-            type="application/pdf" 
-            width="100%" 
-            height="800px"
-          />
-        </div>
-        
-        {/* Fallback for browsers that don't support embed */}
-        <div className="cv-fallback">
-          <p>
-            If the PDF doesn't display properly, you can{' '}
-            <a href={cvPath} target="_blank" rel="noopener noreferrer">
-              view it in a new tab
-            </a>{' '}
-            or{' '}
-            <a href={cvPath} download="Chase_Miner_CV.pdf">
-              download it directly
-            </a>.
-          </p>
+    <article className="post">
+      {/* CV Actions Bar */}
+      <div className="cv-actions-bar">
+        <a 
+          href={cvPath} 
+          download="Chase_Miner_CV.pdf"
+          className="cv-download-btn"
+        >
+          📄 Download PDF
+        </a>
+        <a 
+          href={cvPath} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="cv-view-btn"
+        >
+          🔗 Open PDF
+        </a>
+      </div>
+
+      <div className="post-layout">
+        <Sidebar />
+        <div className="post-inner">
+          <h1>{cvData.title}</h1>
+          <div className="post-body">
+            {renderedBlocks}
+          </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 }
