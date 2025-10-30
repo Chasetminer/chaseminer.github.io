@@ -124,10 +124,10 @@ Then a year after that, I had taken more classes and more importantly had been e
   {
     id: 'origami',
     title: 'Origami Endeavors',
-    date: '2025-09-20',
+    date: '2022-09-20',
     photo: '/Origami_dragon.jpeg|/Origami_dragon_hero.jpeg',
     content: `
-      Lorem ipsum
+      Lorem ipsum. Try another post! Still working on this one.
     `,
   },
   {
@@ -136,21 +136,21 @@ Then a year after that, I had taken more classes and more importantly had been e
     date: '2025-09-20',
     photo: '/Flower_landscape.jpeg|/Flower_hero.jpeg',
     content: `
-      Lorem Ipsum
+      Lorem Ipsum. Try another post! Still working on this one.
     `,
   },
-  {
-    id: 'test4',
-    title: 'DNS Troubleshooting Tips',
-    date: '2025-09-20',
-    photo: '/dns.png',
-    content: `
-      DNS issues can be frustrating, especially when deploying custom domains. Here's how I debugged my GitHub Pages setup:
-      - Verified CNAME records
-      - Cleared browser cache
-      - Used incognito mode to bypass cached redirects
-    `,
-  },
+  // {
+  //   id: 'test4',
+  //   title: 'DNS Troubleshooting Tips',
+  //   date: '2025-09-20',
+  //   photo: '/dns.png',
+  //   content: `
+  //     DNS issues can be frustrating, especially when deploying custom domains. Here's how I debugged my GitHub Pages setup:
+  //     - Verified CNAME records
+  //     - Cleared browser cache
+  //     - Used incognito mode to bypass cached redirects
+  //   `,
+  // },
 ];
 
 export default posts;
