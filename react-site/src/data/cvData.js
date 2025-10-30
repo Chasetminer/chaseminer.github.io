@@ -40,11 +40,11 @@ GPA 3.74/4.00
 
 # PUBLICATIONS & PRESENTATIONS
 
-- Miner, C. T. (2026, May). _Charge Detection Mass Spectrometry (CDMS) of Microparticles_ \[Conference presentation\]. 2026 Intermountain Engineering, Technology and Computing Conference Presentation. Anticipated May 2026.
-- Undergraduate Senior Capstone Presentation. _Low-cost Multi-link Satellite Terminal for the Africa Central Area._ Anticipated April 2026.
-- Jardine, H. O., Miner, C. T., Christie, E., Chiang, S. W., & Hawkins, A. R. (2025). _Charge Detection Mass Spectrometry of Micron-sized Particles Using Printed Circuit Board Electrodes._ Manuscript submitted for publication.
-- Miner, C. T. (2025, May). _Describing Dust Using CDMS_ \[Conference presentation\]. BYU IMMERSE, Provo, UT, United States.
-- Miner, C. T. (2024, June). _Describing Dust Using CDMS: Preliminary Findings_ \[Conference presentation\]. BYU IMMERSE, Provo, UT, United States.
+- Miner, C. T. (2026, May). *Charge Detection Mass Spectrometry (CDMS) of Microparticles* \[Conference presentation\]. 2026 Intermountain Engineering, Technology and Computing Conference Presentation. Anticipated May 2026.
+- Undergraduate Senior Capstone Presentation. *Low-cost Multi-link Satellite Terminal for the Africa Central Area.* Anticipated April 2026.
+- Jardine, H. O., Miner, C. T., Christie, E., Chiang, S. W., & Hawkins, A. R. (2025). *Charge Detection Mass Spectrometry of Micron-sized Particles Using Printed Circuit Board Electrodes.* Manuscript submitted for publication.
+- Miner, C. T. (2025, May). *Describing Dust Using CDMS* \[Conference presentation\]. BYU IMMERSE, Provo, UT, United States.
+- Miner, C. T. (2024, June). *Describing Dust Using CDMS: Preliminary Findings* \[Conference presentation\]. BYU IMMERSE, Provo, UT, United States.
 
 # WORK EXPERIENCE
 
@@ -63,7 +63,8 @@ CHARGE DETECTION MASS SPECTROMETRY OF MICRON-SIZED PARTICLES PROJECT, *April 202
 - Prototyped more robust, repeatable testing setups, expanded procedures for eliminating electronic noise, machined more precise parts to capture more particles, 3D printed mounts to hold pieces in place
 - Captured data from an oscilloscope and processed the CSV file
 - Wirebonded custom amplifier chip to larger PCB
-- Subbitted journal paper on our findings in the Review of Scientific Instruments
+- Subbitted journal paper on our findings for review in the Review of Scientific Instruments
+
 <br><br>
 
 **Mechanical Engineering Research Assistant, Applied Biomechanics Engineering Laboratory**, Brigham Young University, Provo, UT
