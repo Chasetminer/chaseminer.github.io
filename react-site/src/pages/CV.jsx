@@ -1,10 +1,10 @@
 import cvData from '../data/cvData';
 import Sidebar from '../components/Sidebar';
 import { parseContent, renderBlocks } from '../utils/parseContent.jsx';
-import { getAssetPath } from '../utils/assetPath.js';
 
 export default function CV() {
-  const cvPath = getAssetPath(cvData.pdfPath);
+  // Use direct path for PDF since it's in the public folder
+  const cvPath = cvData.pdfPath;
   const structured = parseContent(cvData.content);
   const renderedBlocks = renderBlocks(structured);
 
@@ -24,6 +24,11 @@ export default function CV() {
           target="_blank" 
           rel="noopener noreferrer"
           className="cv-view-btn"
+          onClick={(e) => {
+            // Ensure proper navigation to PDF
+            e.preventDefault();
+            window.open(cvPath, '_blank', 'noopener,noreferrer');
+          }}
         >
           🔗 Open PDF
         </a>

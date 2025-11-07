@@ -1,6 +1,6 @@
 const cvData = {
   title: 'Curriculum Vitae',
-  pdfPath: '/2025-10-29Chase_Miner_Curriculum_Vitae.pdf',
+  pdfPath: '/2025-10-29 Chase Miner Curriculum Vitae.pdf',
   content: `
 # EDUCATION
 
@@ -20,8 +20,6 @@ GPA 3.65/4.00
 - Engineering Seminar Classes: ME EN 191 New Student Seminar, EC EN 191 New Student Seminar
 - Advanced Mathematics Coursework: MATH 213 Linear Algebra, MATH 215 Computational Linear Algebra, MATH 314 Multivariable Calculus, MATH 334 Ordinary Differential Equations
 - Attended Honors Undergraduate Thesis Poster Sessions: Artificial Intelligence Usage by Students, VR/AR in the Workplace (March 2024)
-
-<br><br>
 
 **Gunn High School**, Palo Alto, CA
 
@@ -65,8 +63,6 @@ CHARGE DETECTION MASS SPECTROMETRY OF MICRON-SIZED PARTICLES PROJECT, *April 202
 - Wirebonded custom amplifier chip to larger PCB
 - Subbitted journal paper on our findings for review in the Review of Scientific Instruments
 
-<br><br>
-
 **Mechanical Engineering Research Assistant, Applied Biomechanics Engineering Laboratory**, Brigham Young University, Provo, UT
 
 NIH BACK PAIN CONSORTIUM PROJECT, *April 2023 - September 2023*
@@ -74,8 +70,6 @@ NIH BACK PAIN CONSORTIUM PROJECT, *April 2023 - September 2023*
 - Fabricated nanocomposite strain sensors and attached them to 4-way stretch fabric
 - Sewed and soldered connections between strain sensor array and custom PCB
 - Shipped completed products for testing across the country, used for characterizing lumbar spine flexion in patients with and without lower back pain  
-
-<br><br>
 
 # EXTRACURRICULAR & CLUB ACTIVITIES
 
@@ -86,8 +80,6 @@ NIH BACK PAIN CONSORTIUM PROJECT, *April 2023 - September 2023*
 - Created a database using InfluxDB and connected that database to Grafana to display the data
 - Connected RaspberryPi to Tailscale network to monitor plants away from home
 
-<br><br>
-
 **Origami Club Member**, Brigham Young University, Provo, UT
 
 *September 2022 - April 2023*
@@ -96,8 +88,6 @@ NIH BACK PAIN CONSORTIUM PROJECT, *April 2023 - September 2023*
 - Assisted other club members with origami projects as needed
 - Focused on basic folding techniques: Rabbit Ear, Squash, Pleat, Reverse, etc.
 - Completed projects: Dragon, Chameleon, Horse, Unicorn, Sun, Java Sparrow, Kangaroo, T-Rex
-
-<br><br>
 
 # SERVICE & LEADERSHIP
 
@@ -137,8 +127,6 @@ DEACON'S QUORUM PRESIDENT, Palo Alto 2nd Ward, Palo Alto, CA, *November 2013 - O
 
 - Planned activities for the 12-14 year old boys
 
-<br><br>
-
 **Full-Time Religious Service Volunteer**, The Church of Jesus Christ of Latter-day Saints, Los Angeles, CA
 
 *July 2020 - July 2022*
@@ -169,8 +157,6 @@ DISTRICT LEADER, CALIFORNIA LOS ANGELES MISSION, *January 2021 - May 2021*
 - Met weekly with 6-8 other volunteers to follow up on past goals and then set new goals
 - Conducted 1-on-1 all-day performance reviews at least once a week with various volunteers
 
-<br><br>
-
 **Boy Scout**, Boy Scouts of America, Palo Alto, CA
 
 *October 2013 - October 2020*
@@ -179,15 +165,11 @@ DISTRICT LEADER, CALIFORNIA LOS ANGELES MISSION, *January 2021 - May 2021*
 - As Senior Patrol Leader, organized an interfaith service day with an all-Muslim scout troop attended by 40+ people
 - Participated in beach cleanup days, weeding out invasive plants in marshland, and constructing new batting cages at a local park
 
-<br><br>
-
 **Camp Counselor**, Gunn Robotics Summer Camp, Palo Alto, CA
 
 *May 2018 - June 2018*
 
 - Helped create the first Gunn Robotics Summer Camp for local middle schoolers to teach engineering principles using VEX IQ robotics kits
-
-<br><br>
 
 # SKILLS  
 
@@ -198,23 +180,17 @@ DISTRICT LEADER, CALIFORNIA LOS ANGELES MISSION, *January 2021 - May 2021*
 - Office Software: Excel, Word, Powerpoint, Visio
 - Languages: Vietnamese (basic reading, writing, speaking, listening), French (basic reading, writing, speaking, listening)
 
-<br><br>
-
 # ASSOCIATIONS
 
 - Institute of Electrical and Electronics Engineers, 2025 - Present
 - National Association for Amateur Radio (Call Sign: KN6DNY, Technician Class), 2019 - Present
 - FIRST Robotics, 2017 - 2020
 
-<br><br>
-
 # CERTIFICATIONS
 
 - Eagle Scout, Boy Scouts of America, 2019
 - Cardiopulmonary Resuscitation (CPR)
 - Autonomous Award, Name of Regional Competition, FIRST Robotics, 2019
-
-<br><br>
 
 # HOBBIES
 
